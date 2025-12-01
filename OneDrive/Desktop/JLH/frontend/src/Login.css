@@ -1,0 +1,329 @@
+/* Modern Auth Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 15s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Auth Box - Modern Card Design */
+.login-box {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 1;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo/Title Section */
+.login-box h1 {
+  color: #4f46e5;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4f46e5 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.login-box h2 {
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Error Message - Modern Styling */
+.login-error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  color: #991b1b;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #fecaca;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.1);
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.login-error p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Form Groups */
+.login-form-group {
+  margin-bottom: 1.75rem;
+}
+
+.login-form-group label {
+  display: block;
+  margin-bottom: 0.625rem;
+  color: #1f2937;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+}
+
+.login-form-group input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+.login-form-group input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  transform: translateY(-1px);
+}
+
+.login-form-group input:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.login-form-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Modern Login Button */
+.login-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #667eea 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  letter-spacing: 0.01em;
+}
+
+.login-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4338ca 0%, #5568d3 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Register Link */
+.login-box > div:last-child {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.login-box > div:last-child p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0.75rem 0;
+}
+
+.login-box > div:last-child button {
+  background: none;
+  border: none;
+  color: #4f46e5;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.login-box > div:last-child button:hover {
+  color: #4338ca;
+  text-decoration: none;
+}
+
+/* Password Wrapper Styles */
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  padding-right: 3rem;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #6b7280;
+  transition: color 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 4px;
+}
+
+.toggle-password-btn:hover {
+  color: #4f46e5;
+  background-color: rgba(79, 70, 229, 0.05);
+}
+
+.toggle-password-btn:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+.toggle-password-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Design for Login/Register */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1rem;
+  }
+
+  .login-box {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .login-box h1 {
+    font-size: 1.75rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .login-form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form-group input {
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 0.75rem;
+  }
+
+  .login-box {
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+  }
+
+  .login-box h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-box h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .login-form-group input {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .login-button {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .login-box {
+    max-width: 400px;
+    padding: 2.5rem;
+  }
+}
